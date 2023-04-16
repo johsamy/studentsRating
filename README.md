@@ -29,5 +29,6 @@ Barre de recherche et pagination pour la liste des élèves.
 Personnalisation du favicon ainsi que du titre figurant dans l'onglet.
 Amélioration des champs date dans les formulaires.
 Rectification du système d'ouverture du modal d'ajouter une note.
+Passage de la datatable en cards pour le mode mobile portrait.
 Design affiné.
 Découpage des composents plus poussé.

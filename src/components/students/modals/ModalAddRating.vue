@@ -9,7 +9,7 @@
       <v-card-text>
         <v-form>
           <v-text-field v-model="note.value" label="Note"></v-text-field>
-          <v-text-field v-model="note.date" label="Date" :value="defaultDate()" type="date" @input="updateDate"></v-text-field>
+          <v-text-field v-model="note.date" label="Date" type="date"></v-text-field>
           <FormError v-if="showErrorMessage">
             La note doit être un entier compris entre 0 et 40.
           </FormError>
@@ -32,7 +32,7 @@ export default {
     return {
       note: {
         value: '',
-        date: ''
+        date: new Date().toISOString().substr(0, 10)
       },
       showErrorMessage: false
     }
@@ -63,14 +63,6 @@ export default {
         this.showErrorMessage = false
         this.openAddRating = false
       }
-    },
-    defaultDate() {
-      const today = new Date()
-      return today.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/')
-    },
-    updateDate() {
-      const date = new Date(this.note.date)
-      this.note.date = date.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/')
     }
   }
 }

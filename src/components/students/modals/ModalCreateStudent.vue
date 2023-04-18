@@ -10,7 +10,7 @@
         <v-form>
           <v-text-field v-model="student.firstName" label="Nom"></v-text-field>
           <v-text-field v-model="student.lastName" label="Prénom"></v-text-field>
-          <v-text-field v-model="student.birthDate" label="Date de naissance"></v-text-field>
+          <v-text-field v-model="student.birthDate" label="Date de naissance" type="date"></v-text-field>
           <FormError v-if="showErrorMessage">
             Cet élève existe déjà.
           </FormError>
